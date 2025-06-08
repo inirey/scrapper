@@ -49,4 +49,4 @@ async function pornhubDetailScraper(videoUrl) {
   }
 }
 
-module.exports = pornhubDetailScraper;
+module.exports = { pornhubDetailScraper }
