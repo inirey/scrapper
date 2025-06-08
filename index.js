@@ -13,10 +13,10 @@ app.enable('trust proxy');
 app.set("json spaces",2)
 app.use(cors())
 app.use(secure)
-app.use(express.static("anjay"))
+app.use(express.static("public"))
 
 app.use('/', mainrouter);
-app.use('/test', apirouter);
+app.use('/api', apirouter);
 
 app.listen(PORT, () => {
     console.log(color("running on port " + PORT,'green'))
