@@ -46,4 +46,4 @@ async function TiktokDownloader (Url) {
 	})
 }
 
-module.exports = { TiktokDownloader}
+module.exports = { TiktokDownloader }
