@@ -3,24 +3,25 @@ __path = process.cwd()
 var express = require('express');
 var db = require(__path + '/main/db');
 try {
-var apis = db.get("apis");
+var zahirr = db.get("zahirr");
 } catch (e) {
 	console.log('')  
 }
 
 var creator = "Rey"
-var { color, bgcolor } = require(__path + '/lib/color.js');
-var { fetchJson } = require(__path + '/lib/fetcher.js');
-var options = require(__path + '/lib/options.js');
+var { color, bgcolor } = require(__path + '/opoya/color.js');
+var { fetchJson } = require(__path + '/opoya/fetcher.js');
+var options = require(__path + '/opoya/options.js');
 
 
 /* 
   FEATURE
 */
-var { pornhubDetailScraper } = require(__path + '/feature/phub.js');
-var { facebook } = require(__path + '/feature/facebook.js');
-var { twitter } = require(_path + '/feature/twitter.js');
-var { TiktokDownloader } = require(_path + '/feature/tiktok.js');
+var { pornhubDetailScraper } = require('../feature/phub.js');
+var { facebook } = require('../feature/facebook.js');
+var { twitter } = require('../feature/twitter.js');
+var { TiktokDownloader } = require('../feature/tiktok.js');
+// Tambahin sendiri variabel nya
 
 
 var cookie = process.env.COOCKIE
@@ -48,7 +49,7 @@ loghandler = {
 router.get('/dl/facebook', async (req, res, next) => {
 
   const url = req.query.url;
-  const apikey = req.query.apikey;
+  //const apikey = req.query.apikey;
   if(!url) return res.json(loghandler.noturl)
        facebook(url)
        .then((result) => {
@@ -64,7 +65,7 @@ router.get('/dl/facebook', async (req, res, next) => {
 
 router.get('/pornhub', async (req, res) => {
   const query = req.query.query || req.query.q;
-  const apikey = req.query.apikey;
+  //const apikey = req.query.apikey;
 
   if (!query) {
     return res.status(400).json({
@@ -91,11 +92,11 @@ router.get('/pornhub', async (req, res) => {
 });
 	
 router.get('/dl/tiktok', async (req, res, next) => {
-    var Apikey = req.query.apikey,
+    //var Apikey = req.query.apikey,
         url = req.query.url
 
-	if(!Apikey) return res.json(loghandler.notparam)
-	if(listkey.includes(Apikey)){
+	//if(!Apikey) return res.json(loghandler.notparam)
+	//if(listkey.includes(Apikey)){
      if (!url) return res.json(loghandler.noturl)
      TiktokDownloader(`${url}`)
         .then(data => {
