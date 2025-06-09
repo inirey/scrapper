@@ -5,6 +5,9 @@
 Repo ini berisi kumpulan kode untuk scraping dari:
 - 📱 **TikTok**
 - 📘 **Facebook**
+- ✍🏻 **Ephoto360**
+- 🖼️ **Photoxry**
+- 👑 **TextPro**
 - 🎥 **Pornhub**
 - 🍑 **JavGuru**
 - 🎬 **Anime**
